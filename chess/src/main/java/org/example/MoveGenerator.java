@@ -194,7 +194,6 @@ public class MoveGenerator {
         for (Move move : pseudo) {
             Board.MoveInfo info = board.makeMove(move);
             boolean legal = !board.isInCheck(mover);
-            board.unmakeMove(info);
             if (legal) return true;
         }
         return false;

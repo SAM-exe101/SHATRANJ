@@ -9,13 +9,11 @@ import javafx.stage.Stage;
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/chess.fxml"));
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("/org/example/chess.fxml"));
         StackPane root = loader.load();
 
         Scene scene = new Scene(root, 1200, 800);
-
-        // Load the CSS file
-        scene.getStylesheets().add(getClass().getResource("/org/example/style.css").toExternalForm());
+        scene.getStylesheets().add(Main.class.getResource("/org/example/style.css").toExternalForm());
 
         stage.setTitle("Chess");
         stage.setScene(scene);
